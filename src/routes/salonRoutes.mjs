@@ -1,23 +1,46 @@
 import express from "express";
+import Salon from "../models/salonModel.mjs";
 
 const router = express.Router();
 
-// Temporary placeholder routes for salons
-
-// @route   GET /api/salons
-// @desc    Get all salons
-router.get("/", (req, res) => {
-  res.json([
-    { id: 1, name: "NoirAura Beauty Lounge", city: "Columbus" },
-    { id: 2, name: "Glow Essence Spa", city: "New York" }
-  ]);
+// GET /api/salons - list all
+router.get("/", async (_req, res) => {
+  try {
+    const salons = await Salon.find({});
+    res.json(salons);
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
 });
 
-// @route   POST /api/salons
-// @desc    Create a new salon 
-router.post("/", (req, res) => {
-  const newSalon = req.body;
-  res.status(201).json({ msg: "Salon created", salon: newSalon });
+// POST /api/salons - create
+router.post("/", async (req, res) => {
+  try {
+    const created = await Salon.create(req.body);
+    res.status(201).json(created);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
+});
+
+// PUT /api/salons/:id - update
+router.put("/:id", async (req, res) => {
+  try {
+    const updated = await Salon.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(updated);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
+});
+
+// DELETE /api/salons/:id - delete
+router.delete("/:id", async (req, res) => {
+  try {
+    const deleted = await Salon.findByIdAndDelete(req.params.id);
+    res.json(deleted);
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
 });
 
 export default router;
