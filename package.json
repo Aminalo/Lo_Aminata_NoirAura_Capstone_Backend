@@ -1,25 +1,22 @@
 {
   "name": "noiraura-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.mjs",
+  "type": "module",
+  "main": "src/server.mjs",
   "scripts": {
-    "dev": "nodemon app.mjs",
-    "start": "node app.mjs",
-    "seed": "node scripts/seed.mjs",
-    "setup:validation": "node scripts/setupValidation.mjs",
-    "setup:indexes": "node scripts/createIndexes.mjs"
-  },
+  "dev": "nodemon src/server.mjs",
+  "start": "node src/server.mjs"
+},
   "dependencies": {
-    "bcrypt": "^6.0.0",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.19.1",
+    "mongoose": "^8.0.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.0.3"
   }
 }
