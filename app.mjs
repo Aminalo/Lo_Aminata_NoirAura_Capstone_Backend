@@ -11,7 +11,7 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN, credentials: true }));
 
 app.get("/health", (req, res) => res.json({ ok: true }));
 
-// error handler (last)
+// error handler 
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(err.status || 500).json({ error: err.message || "Server error" });
