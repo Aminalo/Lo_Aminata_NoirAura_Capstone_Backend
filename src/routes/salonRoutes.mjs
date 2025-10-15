@@ -1,5 +1,7 @@
 import express from "express";
 import Salon from "../models/salonModel.mjs";
+import auth from "../middleware/authMiddleware.mjs";
+
 
 const router = express.Router();
 
