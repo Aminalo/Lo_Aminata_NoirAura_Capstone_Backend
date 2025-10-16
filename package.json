@@ -5,7 +5,8 @@
   "main": "src/server.mjs",
   "scripts": {
     "dev": "nodemon src/server.mjs",
-    "start": "node src/server.mjs"
+    "start": "node src/server.mjs",
+        "seed": "node src/utils/seed.mjs"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
