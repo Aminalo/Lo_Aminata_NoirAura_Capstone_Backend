@@ -21,7 +21,7 @@ async function run() {
       {
         name: "NoirAura Beauty Lounge",
         city: "Columbus",
-        photo: "https://picsum.photos/seed/noiraura/600/400",
+        photo: "https://unsplash.com/fr/photos/une-chambre-rose-avec-une-chaise-et-un-miroir-y5j1Bxo94kw",
         services: [
           { name: "Makeup", price: 80, duration: 60 },
           { name: "Haircut", price: 45, duration: 30 }
@@ -30,7 +30,7 @@ async function run() {
       {
         name: "Glow Essence Spa",
         city: "New York",
-        photo: "https://picsum.photos/seed/glow/600/400",
+        photo: "https://unsplash.com/fr/photos/un-salon-de-coiffure-avec-chaises-et-miroirs-GPcqxtH9Gjo",
         services: [
           { name: "Facial", price: 65, duration: 45 },
           { name: "Massage", price: 90, duration: 60 }
@@ -39,7 +39,7 @@ async function run() {
       {
         name: "Radiant Touch Studio",
         city: "Atlanta",
-        photo: "https://picsum.photos/seed/radiant/600/400",
+        photo: "https://unsplash.com/fr/photos/la-boutique-a-un-decor-elegant-et-beaucoup-de-lumiere-Deng7L_BGo8",
         services: [
           { name: "Braids", price: 120, duration: 120 },
           { name: "Nails", price: 55, duration: 60 }
