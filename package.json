@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.mjs",
     "start": "node src/server.mjs",
-        "seed": "node src/utils/seed.mjs"
+    "seed:salons": "node src/utils/seedSalons.mjs"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
