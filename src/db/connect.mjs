@@ -2,14 +2,15 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
-const connectionStr = process.env.mongoURI || "";
-
 async function connectDB() {
   try {
-    await mongoose.connect(connectionStr);
-    console.log("MongoDB Connected...");
+    const uri = process.env.mongoURI;
+    if (!uri) throw new Error("Missing mongoURI in .env");
+
+    await mongoose.connect(uri);
+    console.log("✅ MongoDB Connected...");
   } catch (err) {
-    console.error("DB Connection Error:", err.message);
+    console.error("❌ MongoDB Connection Error:", err.message);
     process.exit(1);
   }
 }

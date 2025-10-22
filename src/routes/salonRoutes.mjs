@@ -1,6 +1,6 @@
 import express from "express";
 import Salon from "../models/salonModel.mjs";
-import auth from "../middleware/authMiddleware.mjs";
+import { verifyToken } from "../middleware/authMiddleware.mjs";
 
 
 const router = express.Router();
@@ -16,7 +16,7 @@ router.get("/", async (_req, res) => {
 });
 
 // POST /api/salons - create
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
   try {
     const created = await Salon.create(req.body);
     res.status(201).json(created);
