@@ -4,7 +4,7 @@ import { verifyToken } from "../middleware/authMiddleware.mjs";
 
 const router = express.Router();
 
-// ✅ Get all favorites for a user
+// Get all favorites for a user
 router.get("/", verifyToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id)
@@ -16,7 +16,7 @@ router.get("/", verifyToken, async (req, res) => {
   }
 });
 
-// ✅ Add a salon to favorites
+// Add a salon to favorites
 router.post("/:salonId", verifyToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
@@ -34,7 +34,7 @@ router.post("/:salonId", verifyToken, async (req, res) => {
   }
 });
 
-// ✅ Remove a salon from favorites
+// Remove a salon from favorites
 router.delete("/:salonId", verifyToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);

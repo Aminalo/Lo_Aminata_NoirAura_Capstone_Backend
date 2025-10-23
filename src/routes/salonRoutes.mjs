@@ -5,7 +5,7 @@ import { verifyToken } from "../middleware/authMiddleware.mjs";
 
 const router = express.Router();
 
-// GET /api/salons - list all
+// GET /api/salons 
 router.get("/", async (_req, res) => {
   try {
     const salons = await Salon.find({});
@@ -25,7 +25,7 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
-// PUT /api/salons/:id - update
+// PUT /api/salons/
 router.put("/:id", async (req, res) => {
   try {
     const updated = await Salon.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -35,7 +35,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// DELETE /api/salons/:id - delete
+// DELETE /api/salons/
 router.delete("/:id", async (req, res) => {
   try {
     const deleted = await Salon.findByIdAndDelete(req.params.id);

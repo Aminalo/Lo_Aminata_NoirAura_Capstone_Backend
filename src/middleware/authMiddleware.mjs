@@ -3,10 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-/**
- * Middleware to verify JWT tokens.
- * Ensures routes are protected.
- */
+ //Middleware to verify JWT tokens.
+ 
 export function verifyToken(req, res, next) {
   const authHeader = req.headers.authorization;
 

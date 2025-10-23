@@ -72,8 +72,6 @@ async function run() {
     ]
   },
 
-  // --- New salons below ---
-
   {
     name: "Blush & Bloom Studio",
     city: "Miami",
